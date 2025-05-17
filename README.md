@@ -2,7 +2,7 @@
 
 A Flask-based web application for managing and recording student attendance using face recognition powered by FaceNet.
 
-> **This project was developed as a CSIT Final Year Project.**
+> **This project was developed as a Final Year Project by a 4th-year CSIT student.**
 
 ---
 
@@ -25,7 +25,7 @@ A Flask-based web application for managing and recording student attendance usin
 attendance-system/
 ├── user_data/                 # Captured face images per student
 ├── templates/                # HTML templates
-├── static/                   # CSS, JS, assets (if any)
+├── static/                   # CSS, JS, assets 
 ├── attendance.db             # SQLite database
 ├── app.py                    # Main Flask app
 ├── README.md                 # Project documentation
@@ -51,11 +51,11 @@ pip install -r requirements.txt
 Add the following to your `requirements.txt`:
 
 ```
-Flask
-opencv-python
-keras-facenet
-numpy
-pillow
+Flask  
+opencv-python  
+keras-facenet  
+numpy  
+pillow  
 ```
 
 Note: `sqlite3` is part of the Python standard library and does not need to be installed separately.
@@ -116,15 +116,18 @@ Then restart the app. The database and tables will be recreated automatically.
 
 ---
 
-### Screenshots (Optional)
+### **Screenshots**
 
-* Attendance Sheet
-  ![Attendance Sheet](image-3.png)
+**Attendance Sheet**
+![Attendance Sheet](image-3.png)
 
-* Account Creation
-  ![Account Creation](image-2.png)
+**Account Creation**
+![Account Creation](image-2.png)
 
-* Student and Admin Dashboards
-  ![Student Dashboard](image.png)
-  ![Admin Dashboard](image-1.png)
+**Student Dashboard**
+![Student Dashboard](image.png)
 
+**Admin Dashboard**
+![Admin Dashboard](image-1.png)
+
+---
