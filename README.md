@@ -116,19 +116,3 @@ rm attendance.db
 Then restart the app. The database and tables will be recreated automatically.
 
 ---
-
-### **Screenshots**
-
-**Attendance Sheet**
-![Attendance Sheet](image-3.png)
-
-**Account Creation**
-![Account Creation](image-2.png)
-
-**Student Dashboard**
-![Student Dashboard](image.png)
-
-**Admin Dashboard**
-![Admin Dashboard](image-1.png)
-
----
