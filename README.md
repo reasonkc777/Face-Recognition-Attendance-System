@@ -129,5 +129,3 @@ Then restart the app. The database and tables will be recreated automatically.
 
 **Admin Dashboard**
 ![Admin Dashboard](image-1.png)
-
----
