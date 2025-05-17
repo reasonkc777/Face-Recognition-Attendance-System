@@ -2,7 +2,7 @@
 
 A Flask-based web application for managing and recording student attendance using face recognition powered by FaceNet.
 
-> **This project was developed as a Final Year Project by a 4th-year CSIT student.**
+> **This project was developed as a CSIT Final Year Project.**
 
 ---
 
