@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+        .search-container {
+            width: 80%;
+            margin: 20px auto;
+            text-align: center;
+        }
+        input[type="text"] {
+            width: 60%;
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Attendance Records</h1>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <form method="GET" action="/attendance">
+            <input type="text" name="search_query" placeholder="Search by name, date, or batch..." value="{{ search_query or '' }}">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <form method="POST" action="/attendance">
+        <button type="submit" name="download_csv">Download Sheet</button>
+    </form>
+
+    <!-- Attendance Table -->
+    <div id="attendanceList">
+        <table>
+            <thead>
+                <tr>
+                    <th>Attendance ID</th>
+                    <th>Student Name</th>
+                    <th>Batch</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if attendance_records %}
+                    {% for record in attendance_records %}
+                        <tr>
+                            <td>{{ record.attendance_id }}</td>
+                            <td>{{ record.first_name }} {{ record.last_name }}</td>
+                            <td>{{record.batch}}</td>
+                            <td>{{ record.timestamp }}</td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="4" style="text-align: center; color: #888;">No attendance records found.</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

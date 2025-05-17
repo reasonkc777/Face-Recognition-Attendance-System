@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/static/css/Dashboard.css"> 
+</head>
+<body>
+    <header>
+        <div class="logo-section">
+            <img src="/static/images/MeroHajiri_logo.png" alt="MeroHajiri Logo" class="logo">
+            <h1>MeroHajiri</h1>
+        </div>
+        <div class="user-section">
+            Hi, <span id="first_name">{{ admin_name }}</span> 
+        </div>
+    </header>
+
+    <div class="sidebar">
+        <div id="datetime">Loading date and time...</div>
+        <a href="/admin_dashboard">Dashboard</a>
+        <a href="/admin_attendance">Attendance Sheet</a>
+        <a href="/manage_students">Manage Students</a>
+        <a href="#" onclick="openLogoutDialog()">Logout</a>
+        <div id="logoutDialog" style="display: none;">
+            <div class="dialog-box">
+                <p>Are you sure you want to logout?</p>
+                <button onclick="confirmLogout()">Yes</button>
+                <button onclick="closeLogoutDialog()">No</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <h2>&nbsp;&nbsp;&nbsp;Welcome to the Admin Dashboard</h2>
+    </div>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+            };
+            document.getElementById('datetime').innerHTML = now.toLocaleDateString('en-US', options);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            setInterval(updateDateTime, 1000);
+        });
+
+        function openLogoutDialog() {
+            document.getElementById('logoutDialog').style.display = 'flex'; 
+        }
+
+        function closeLogoutDialog() {
+            document.getElementById('logoutDialog').style.display = 'none'; 
+        }
+
+        function confirmLogout() {
+            window.location.href = "/logout"; 
+        }
+    </script>
+
+    <style>
+        #logoutDialog {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dialog-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .dialog-box button {
+            margin: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</body>
+</html>

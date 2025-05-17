@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h3 {
+            text-align: center;
+            color: #000;
+        }
+        p {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        strong {
+            color: #000;
+        }
+        .back-btn {
+            display: block;
+            text-align: center;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            width: fit-content;
+        }
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h3>Student Details</h3>
+    <p><strong>Student ID:</strong> {{ student['student_id'] }}</p>
+    <p><strong>First Name:</strong> {{ student['first_name'] }}</p>
+    <p><strong>Last Name:</strong> {{ student['last_name'] }}</p>
+    <p><strong>Batch:</strong> {{ student['batch'] }}</p>
+    <p><strong>Course:</strong> {{ student['course'] }}</p>
+    <a href="/student_dashboard" class="back-btn">Back to Dashboard</a>
+</div>
+</body>
+</html>

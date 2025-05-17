@@ -1,0 +1,128 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Buttons */
+.main-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;
+}
+
+.btn-big {
+    display: inline-block;
+    padding: 20px 40px;
+    margin: 0 15px;
+    background: #2575fc;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.btn-big:hover {
+    background: #6a11cb;
+}
+
+/* About and Contact Section */
+#about-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px;
+    color: #fff;
+    margin: 20px;
+}
+
+#about-contact .info {
+    margin-bottom: 20px;
+}
+
+#about-contact h2 {
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 5px;
+}
+
+#about-contact p {
+    margin: 5px 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #2575fc;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-buttons {
+        flex-direction: column;
+    }
+
+    .btn-big {
+        margin: 15px 0;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+}

@@ -1,0 +1,193 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: #4CAF50;
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+}
+
+header .logo-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+/* Main Section */
+main {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.register-section .container {
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+.create-account-form input,
+.create-account-form select,
+.create-account-form button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.create-account-form button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.create-account-form button:disabled {
+    background-color: #dcdcdc;
+}
+
+.create-account-form button:hover {
+    background-color: #45a049;
+}
+
+.create-account-form .course select {
+    cursor: pointer;
+}
+
+/* Face Capture Section */
+.face-capture-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.capture-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.capture-button:hover {
+    background-color: #45a049;
+}
+
+#captureStatus {
+    margin-top: 10px;
+    color: #ff6347;
+    font-weight: bold;
+}
+
+/* Login Button Section */
+.login-btn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Popup Modal */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 400px;
+    text-align: center;
+}
+
+.popup button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.popup button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .create-account-form {
+        width: 90%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .logo-section {
+        flex-direction: column;
+    }
+}

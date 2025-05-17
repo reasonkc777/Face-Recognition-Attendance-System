@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .flash-message {
+            width: 80%;
+            margin: 20px auto;
+            text-align: center;
+            padding: 10px;
+            color: white;
+            background-color: red;
+            border-radius: 5px;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .back-btn {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            width: fit-content;
+        }
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Attendance</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="flash-message">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <!-- Attendance Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>Serial No.</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Batch</th>
+                <th>Course</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if attendance_records %}
+                {% for record in attendance_records %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ record['first_name'] }}</td>
+                        <td>{{ record['last_name'] }}</td>
+                        <td>{{ record['batch'] }}</td>
+                        <td>{{ record['course'] }}</td>
+                        <td>{{ record['timestamp'].strftime('%Y-%m-%d') if record['timestamp'] else 'N/A' }}</td>
+                        <td>{{ record['timestamp'].strftime('%H:%M:%S') if record['timestamp'] else 'N/A' }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="7" style="text-align: center;">No attendance records found.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+
+    <a href="/student_dashboard" class="back-btn">Back to Dashboard</a>
+</body>
+</html>

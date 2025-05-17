@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MeroHajiri - Register</title>
+    <style>
+        /* General Styles for Register Page */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(to right, #2575fc, #6a11cb);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-section img {
+            width: 60px;
+            margin-right: 15px;
+        }
+
+        .logo-section h1 {
+            font-size: 2rem;
+            margin: 0;
+            letter-spacing: 1.2px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .register-section {
+            width: 100%;
+            max-width: 500px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            color: #333;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            color: #2575fc;
+            margin-bottom: 15px;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"], select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            background: #f9f9f9;
+            color: #333;
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, select:focus {
+            border-color: #2575fc;
+            outline: none;
+        }
+
+        select {
+            font-size: 1rem;
+            color: #333;
+            background: #f9f9f9;
+        }
+
+        .face-capture-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #captureFaceBtn {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        #captureFaceBtn:hover {
+            background: linear-gradient(to right, #2575fc, #6a11cb);
+        }
+
+        #captureStatus {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .btn-create-account {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s ease;
+        }
+
+        .btn-create-account:hover {
+            background: linear-gradient(to right, #2575fc, #6a11cb);
+        }
+
+        .login-btn {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .login-button {
+            background: #fff;
+            border: 1px solid #2575fc;
+            color: #2575fc;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            background: #2575fc;
+            color: white;
+        }
+
+        /* Footer Section */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #2575fc;
+            color: white;
+            font-size: 0.9rem;
+            margin-top: 20px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Card for success message */
+        .success-card {
+            background-color: #28a745;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            display: none; /* Hidden initially */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-section">
+            <img src="static/images/MeroHajiri_logo.png" alt="MeroHajiri Logo" class="logo">
+            <h1>MeroHajiri</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="register-section">
+            <div class="container">
+                <form class="create-account-form" action="/register_student" method="POST">
+                    <h3>CREATE ACCOUNT FOR STUDENT</h3>
+
+                    <input type="text" name="first_name" placeholder="First Name" required>
+                    <input type="text" name="last_name" placeholder="Last Name" required>
+                    <input type="text" name="batch" placeholder="Batch" required>
+                    
+                    <div class="course">
+                        <select id="course" name="course" required>
+                            <option value="" disabled selected>Select your course</option>
+                            <option value="Bsc.CSIT">Bsc.CSIT</option>
+                            <option value="BCA">BCA</option>
+                            <option value="BBA">BBA</option>
+                            <option value="BBS">BBS</option>
+                            <option value="BIM">BIM</option>
+                            <option value="BIT">BIT</option>
+                        </select>
+                    </div>
+                    
+                    <input type="text" name="student_id" placeholder="Student ID" required>
+                    <input type="text" name="phone" placeholder="Phone Number" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+
+                    <!-- Face Capture Section -->
+                    <div class="face-capture-section">
+                        <h3>Capture Your Face</h3>
+                        <button type="button" id="captureFaceBtn" class="capture-button">
+                            Capture Face
+                        </button>
+                        <p id="captureStatus"></p> <!-- To show status message -->
+                    </div>
+
+                    <button type="submit" class="btn-create-account">CREATE ACCOUNT</button>
+                </form>
+
+                <p>Already registered?</p>
+                <div class="login-btn">
+                    <button type="button" class="login-button" onclick="redirectToLogin()">Login</button>
+                </div>
+                
+                <!-- Success Message Card -->
+                <div class="success-card" id="successCard">
+                    Face captured successfully! You can now proceed to create your account.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; MeroHajiri 2024. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("captureFaceBtn").addEventListener("click", function() {
+            let studentId = document.querySelector('input[name="student_id"]').value;  // Get student ID
+            let captureStatus = document.getElementById("captureStatus");
+            let successCard = document.getElementById("successCard");
+
+            if (!studentId) {
+                alert("Please enter your Student ID first.");
+                return;
+            }
+
+            captureStatus.innerText = "Capturing face, please wait...";
+
+            fetch("/capture_student", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: `student_id=${encodeURIComponent(studentId)}`  // Send student_id to the backend
+            })
+            .then(response => response.json())
+            .then(data => {
+                captureStatus.innerText = data.message;
+                alert(data.message);
+
+                // If face capture is successful, show success card
+                if (data.success) {
+                    successCard.style.display = 'block';
+                }
+            })
+            .catch(error => {
+                captureStatus.innerText = "Error capturing face.";
+                console.error("Error:", error);
+            });
+        });
+
+        function redirectToLogin() {
+        // Redirect to the login page
+        window.location.href = '/login';
+        }
+    </script>
+</body>
+</html>

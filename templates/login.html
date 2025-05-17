@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MeroHajiri Login</title>
+    <link rel="stylesheet" href="static/css/login.css">
+</head>
+<body>
+    <header>
+        <div class="logo-section">
+            <img src="static/images/MeroHajiri_logo.png" alt="MeroHajiri Logo" class="logo">
+            <h1>MeroHajiri</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="login-container">
+                <h2 class="login-title">Login</h2>
+                <form action="/login1" method="POST">
+                    <input type="text" name="user_id" placeholder="Enter your ID" required>
+                    <input type="password" name="password" placeholder="Enter your Password" required>
+                    
+                    <p class="profile-label">Select your profile:</p>
+                    <div class="profile-selection">
+                        <label>
+                            <input type="radio" name="profile" value="student" required> Student
+                        </label>
+                        <label>
+                            <input type="radio" name="profile" value="admin" required> Admin
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn-login">LOGIN</button>
+                </form>
+                {% if error %}
+                    <p class="error">{{ error }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 MeroHajiri. All rights reserved.</p>
+    </footer>
+</body>
+</html>
