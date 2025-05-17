@@ -114,5 +114,3 @@ rm attendance.db
 ```
 
 Then restart the app. The database and tables will be recreated automatically.
-
----
